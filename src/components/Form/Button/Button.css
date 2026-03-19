@@ -1,0 +1,16 @@
+.button-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button-wrap button,
+.button-wrap button:disabled {
+    width: 100%;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.7rem;
+}

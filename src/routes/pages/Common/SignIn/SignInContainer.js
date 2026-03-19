@@ -15,7 +15,7 @@ const SignInContainer = ({
 
     // 로그인에 필요한 정보를 state로 관리한다
     /*
-     Tip!
+    Tip!
         입력받을 정보가 많을 경우 또는 추가될 경우를 대비하여
         여러개의 state로 관리하는 것이 아닌 아래와 같이 하는 것이 좋다
         const [userInfo, setUserInfo] = useState({
@@ -59,9 +59,9 @@ const SignInContainer = ({
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8',
                 Accept: 'application/json',
-                mode: 'no-cors',
-                'Access-Control-Allow-Origin': '*',
             },
+
+            credentials: "include",
             // JSON.stringify를 이용하여 보내고 싶은 데이터를 JSON형식으로 보낸다.
             // (SignUp과 차이점을 비교하기 바람)
             body: JSON.stringify({
@@ -73,15 +73,14 @@ const SignInContainer = ({
         // 결과 받은 후 문제 없으면 메인 페이지로 이동
         const data = await result.json();
 
-        if (data.status === 4091) {
-            // 4091은 문제가 없다는 것을 뜻하므로 메인 페이지로 이동
-            setUserInfo(data.data);
+        if (data.status === "success") {
+            console.log("로그인 성공: ", data)
+            setUserInfo(data.user);
             navigate('/');
-            return;
+        } else{
+            alert(data.message);
         }
-
-        // 문제가 있을 경우 에러 메시지를 사용자에게 알려준다.
-        alert(data.message);
+        
     }
 
     return (

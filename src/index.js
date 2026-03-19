@@ -8,6 +8,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 /* 모든 페이지의 최상위 페이지를 불러온다. */
 import App from './App';
 
+// Styles
+import './index.css';
+import './styles/font.css'
+
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -1,0 +1,33 @@
+.top-container {
+    width: 100%;
+    min-height: 38.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 20px 0;
+    z-index: 500;
+    background-color: white;
+}
+
+.top-container .top-back {
+    /* width: 90px; */
+    padding-left: 8px;
+    cursor: pointer;
+}
+
+.top-container .top-title {
+    padding-left: 16px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* font-weight: bold; */
+}
+
+.top-container .top-icons {
+    /* width: 90px; */
+    padding-right: 8px;
+}
+
+.top-container .top-icons svg {
+    margin: 0 8px;
+}

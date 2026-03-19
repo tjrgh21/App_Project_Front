@@ -1,0 +1,134 @@
+.sign-up-profile-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    background: #fff;
+    gap: 2rem;
+}
+
+.profile-desc {
+    width: 100%;
+    text-align: left;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 2rem 0;
+    color: #333;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+    margin-bottom: .25rem;
+}
+
+.input-box label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #222;
+}
+
+/* .input-box input,
+.input-box select {
+    font-size: large;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #5555;
+    outline: none;
+    padding: 10px 0;
+    background: transparent;
+} */
+
+.input-box input,
+.input-box select {
+    font-size: 1rem;
+    width: 100%;
+    border: none;
+    border-bottom: 1.5px solid #ccc;
+    outline: none;
+    padding: 12px 4px;
+    background: transparent;
+    border-radius: 0;
+    transition: border-color 0.2s;
+}
+
+.input-box input:focus,
+.input-box select:focus {
+    border-color: #d81837;
+    background: #fafafd;
+}
+
+
+.input-box select[multiple] {
+    min-height: 70px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 2px;
+    padding: 8px;
+    font-size: 1rem;
+}
+
+.profile-btn-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.2rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.prev-btn, .submit-btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 7px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.prev-btn {
+    background: #aaa;
+    color: #fff;
+}
+
+.submit-btn {
+    background: #d81837;
+    color: #fff;
+}
+
+.select-row {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    width: 100%;
+}
+.select-col {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.select-label {
+    font-size: 0.95rem;
+    color: #444;
+}
+.required {
+    color: #d81837;
+    font-weight: bold;
+}
+.optional {
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+.verical::before{
+    vertical-align: super;
+    content: '';
+}
+

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import MainPresenter from "./MainPresenter";
+import { countryList } from "../SignUp/components/SelectList";
 
 /* 
     하나의 페이지를 Container와 Presenter로 분리하고 각 역할은 아래와 같다
@@ -9,63 +10,41 @@ import MainPresenter from "./MainPresenter";
     * Presenter: 불러온 데이터를 토대로 페이지에 출력, 함수 사용
 */
 const MainContainer = ({
-    userInfo,
-    setUserInfo,
-    SignOut,
+    setSearchValue,
 }) => {
     // 페이지 이동을 위한 외부 함수
     const navigate = useNavigate();
 
-    const [text, setText] = useState('');
-    const [isSignUp, setIsSignUp] = useState(null);
-    const [isSignIn, setIsSignIn] = useState(null);
+    const [userData, setUserData] = useState([]);
 
-    const buttonClick = async () => {
-        const result = await fetch('http://localhost:3333/test', {
-            method: 'get',
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                Accept: 'application/json',
-                mode: 'no-cors',
-                'Access-Control-Allow-Origin': '*',
-            }
-        });
+    const keywordsList = [
+    { label: "Same nationality 🌍", value: "nationality" },
+    { label: "Same language 🗣️", value: "language" },
+    { label: "Same major 🎓", value: "major" },
+    { label: "Same diet 🥗", value: "diet" },
+    { label: "Same religion 🙏", value: "religion" },
+    { label: "Same hobby 🎨", value: "hobby" },
+];
 
-        const data = await result.json();
-        setText(data.data);
+    useEffect(() => {
+        fetch('http://localhost:3333/user/all')
+            .then(res => res.json())
+            .then(data => {
+                console.log("서버 응답:", data);
+                setUserData(data);
+            })
+            .catch(err => {
+                console.error("유저 불러오기 실패", err);
+                setUserData([]);
+            });
+    }, []);
+
+    function getCountryName(code) {
+        const found = countryList.find(c => c.code === code);
+        return found ? found.name : code;
     }
+    
 
-    const SignUp = async () => {
-        const result = await fetch('http://localhost:3333/user/signup', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                Accept: 'application/json',
-                mode: 'no-cors',
-                'Access-Control-Allow-Origin': '*',
-            }
-        });
-
-        const data = await result.json();
-        console.log(data)
-        setIsSignUp(data)
-    }
-
-    const SignIn = async () => {
-        const result = await fetch('http://localhost:3333/user/signin', {
-            method: 'get',
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                Accept: 'application/json',
-                mode: 'no-cors',
-                'Access-Control-Allow-Origin': '*',
-            }
-        });
-
-        const data = await result.json();
-        console.log(data)
-        setIsSignIn(data)
-    }
 
     /*
         Container는 Presenter만 반환한다
@@ -74,21 +53,19 @@ const MainContainer = ({
     */
     return (
         <MainPresenter
-            text={text}
 
-            buttonClick={buttonClick}
 
-            SignUp={SignUp}
-            isSignUp={isSignUp}
+            userData={userData}
 
-            SignIn={SignIn}
-            isSignIn={isSignIn}
+            getCountryName={getCountryName}
 
-            userInfo={userInfo}
-            setUserInfo={setUserInfo}
-            SignOut={SignOut}
+            // userInfo={userInfo}
+            // setUserInfo={setUserInfo}
 
             navigate={navigate}
+
+            setSearchValue={setSearchValue}
+            keywords={keywordsList}
         />
     )
 }

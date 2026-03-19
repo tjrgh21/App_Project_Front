@@ -1,0 +1,18 @@
+.add-group-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+    gap: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.add-group-desc {
+    width: 100%;
+    text-align: left;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 4rem 0;
+    color: #333;
+}

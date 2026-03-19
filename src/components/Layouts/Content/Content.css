@@ -1,0 +1,34 @@
+.content-container {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 30px 16px;
+
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.flex-content {
+    flex: 1 1 calc(50% - 12px); /* 반응형 2줄 */
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    
+
+    /* padding: 20px 16px; */
+    border: solid 1px #e3e3e38e;
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+    width: 250px;
+    max-width: calc(50% - 12px);
+
+}
+
+.flex-content span{
+    color: #676767;
+    font-size: 12px;
+}

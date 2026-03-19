@@ -1,0 +1,12 @@
+export { default as Map } from './map.svg';
+export { default as Discover } from './discover.svg';
+export { default as Bell } from './bell.svg';
+export { default as Back } from './back.svg';
+export { default as Board } from './board.svg';
+export { default as Chat } from './chat.svg';
+export { default as Groups } from './groups.svg';
+export { default as Home } from './home.svg';
+export { default as Profile } from './profile.svg';
+export { default as Search } from './search.svg';
+export { default as Connect } from './connect.svg';
+export { default as Menu } from './menu.svg';

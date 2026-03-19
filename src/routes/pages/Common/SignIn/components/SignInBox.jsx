@@ -9,18 +9,21 @@ export const SignInBox = ({
     setPw,
 }) => {
     return (
-        <div className="sign-box">
-            <h2>로그인</h2>
+        <div className="sign-in-box">
             <div className="input-box">
+                <label>EMAIL ADDRESS</label>
                 <input
                     type="text"
-                    placeholder="아이디를 입력해주세요"
+                    placeholder="University email"
                     onChange={e => { setId(e.target.value) }}
                     value={id}
                 />
+            </div>
+            <div className="input-box">
+                <label>PASSWORD</label>
                 <input
                     type="password"
-                    placeholder="비밀번호를 입력해주세요"
+                    placeholder="Password"
                     onChange={e => { setPw(e.target.value) }}
                     value={pw}
                 />

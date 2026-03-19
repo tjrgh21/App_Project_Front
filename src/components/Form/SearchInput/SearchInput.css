@@ -1,0 +1,70 @@
+.search-input-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-input-wrap {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+
+    width: 92%;
+    outline: 1px solid #dbdbdb;
+    padding: 5px 15px;
+    border-radius: 15px;
+    margin-top: .5rem;
+}
+
+.search-input {
+    border: none;
+    
+    width: 100%;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.keyword-button-scroll-container {
+    width: 100%;               /* 전체 너비 사용 */
+    overflow-x: auto;          /* 가로 스크롤 활성화 */
+    white-space: nowrap;       /* 줄바꿈 방지 */
+    -ms-overflow-style: none;  /* IE */
+    scrollbar-width: none;     /* Firefox */
+}
+
+.keyword-button-scroll-container::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari에서 스크롤바 숨김 */
+}
+
+/* .keyword-button-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    padding-left: 5px;
+} */
+
+.keyword-button-list {
+    display: inline-flex;      /* 인라인 플렉스로 */
+    gap: 10px;
+    padding: 15px 20px;
+}
+
+.keyword-button {
+    padding: 6px 12px;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+.keyword-button:hover {
+    background-color: #f0f0f0;
+}
